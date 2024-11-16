@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="container-fluid text-sm-center p-5 bg-light"> <!-- bg-light is background color & p-5 is padding -->
+  <h1 class="display-2">Todo List</h1>
+  <p class="lead">todoリストを作成して生産的な毎日を</p>
+</div>
+{% endblock header %}
+
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+  {{object.title}}
+</div>
+<div class="alert alert-success" role="alert">
+  {{object.memo}}
+</div>
+{% endblock content %}

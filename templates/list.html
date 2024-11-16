@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="container-fluid text-sm p-5 mb-5 bg-light">
+  <h1 class="display-2">Todo List</h1>
+  <p class="lead">todoリストを作成して生産的な毎日を</p>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+  {% for item in object_list %}
+  <div class="alert alert-{{item.priority}}" role="alert">
+    <p>{{item.title}}</p>
+    <a href="#" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集</a>
+    <a href="#" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">削除</a>
+    <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">詳細</a>
+  </div>
+  <!-- 詳細は詳細ページで表示 -->
+  <!-- <div class="alert alert-success" role="alert">
+    {{item.memo}}
+    <a href="#" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
+    <a href="#" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+  </div> -->
+  {% endfor %}
+</div>
+{% endblock content %}
